@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import PostDeleteBtn from '../components/button/PostDeleteBtn';
 import HomeBtn from '../components/button/HomeBtn';
+import styles from './PostDetail.module.css'; // CSS 모듈 import
 
 const PostDetail = () => {
   let { postId } = useParams();
@@ -26,10 +27,11 @@ const PostDetail = () => {
     }
   };
   return (
-    <div>
+    <div className={styles.postDetail}>
       <h2>게시글</h2>
-      <h3>{post.title}</h3>
-      <p>{post.content}</p>
+      <h3>TITLE : {post.title}</h3>
+      <div className={styles.contentLabel}>CONTENT</div>
+      <p className={styles.contentText}>{post.content}</p>
       <HomeBtn />
       <PostDeleteBtn postId={post.id}/>
     </div>
