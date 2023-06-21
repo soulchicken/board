@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 const authRouter = require('./routes/auth');
+const postRouter = require('./routes/post');
 const sessionOption = require('./lib/sessionOption');
 
 sequelize.sync({ force: false })
@@ -38,6 +39,7 @@ app.use(session({
 
 app.use(express.static(path.join(__dirname, '/build')));
 app.use('/api/users', authRouter);
+app.use('/api/posts', postRouter);
 
 app.get('/', (req, res) => {    
     req.sendFile(path.join(__dirname, '/build/index.html'));
