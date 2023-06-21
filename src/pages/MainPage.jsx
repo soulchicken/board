@@ -50,6 +50,8 @@ const MainPage = () => {
     <div>
       <h1>Welcome to Board</h1>
       <Link to="/signup">회원가입</Link>
+      <Link to="/login">로그인</Link>
+      <Link to="/posts/new">글쓰기</Link>
       <PostList posts={posts}/>
     </div>
   );
