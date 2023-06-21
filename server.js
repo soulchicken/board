@@ -14,6 +14,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
+const authRouter = require('./routes/auth');
+
 sequelize.sync({ force: false })
   .then(() => {
     console.log('데이터베이스 연결 성공');
@@ -23,6 +25,7 @@ sequelize.sync({ force: false })
   });
 
 app.use(express.static(path.join(__dirname, '/build')));
+app.use('/api/users', authRouter);
 
 app.get('/', (req, res) => {    
     req.sendFile(path.join(__dirname, '/build/index.html'));
