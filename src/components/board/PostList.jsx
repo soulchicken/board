@@ -7,7 +7,6 @@ import PostTitle from './PostTitle';
 
 const PostList = ({ posts }) => {
   const navigate = useNavigate();
-  console.log(posts);
   return (
     <div className={styles.postList}> {/* CSS 모듈 클래스명 적용 */}
       <h2>게시판 전체보기</h2>
