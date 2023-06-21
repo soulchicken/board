@@ -56,7 +56,6 @@ const NewPostPage = () => {
         </div>
         <button type="submit" className={styles.button}>작성</button>
       </form>
-      <HomeBtn />
     </div>
   );
 };
