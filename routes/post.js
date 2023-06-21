@@ -38,7 +38,25 @@ router.get('/', (req, res) => {
         console.error(error);
         res.status(500).json({ error: 'Internal server error' });
       });
-  });
+});
+
+// 게시글 상세 조회
+router.get('/:id', (req, res) => {
+    const { id } = req.params;
+  
+    Post.findByPk(id)
+      .then((post) => {
+        if (!post) {
+          res.status(404).json({ error: 'Post not found' });
+          return;
+        }
+        res.json(post);
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+      });
+});
 
 // 게시글 삭제
 router.delete('/:id', async (req, res) => {
