@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import PostDeleteBtn from '../components/button/PostDeleteBtn';
+import HomeBtn from '../components/button/HomeBtn';
 
 const PostDetail = () => {
   let { postId } = useParams();
@@ -29,6 +30,7 @@ const PostDetail = () => {
       <h2>게시글</h2>
       <h3>{post.title}</h3>
       <p>{post.content}</p>
+      <HomeBtn />
       <PostDeleteBtn postId={post.id}/>
     </div>
   );

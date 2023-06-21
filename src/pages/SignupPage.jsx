@@ -1,4 +1,5 @@
 import React from 'react';
+import HomeBtn from '../components/button/HomeBtn';
 import SignupForm from '../components/SignupForm';
 
 const SignupPage = () => {
@@ -6,6 +7,7 @@ const SignupPage = () => {
     <div>
       <h1>회원가입</h1>
       <SignupForm />
+      <HomeBtn />
     </div>
   );
 };
