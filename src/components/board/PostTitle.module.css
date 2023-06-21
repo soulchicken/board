@@ -1,0 +1,18 @@
+.postTitle {
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.postTitle :hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.postTitle h3 {
+    font-size: 18px;
+    margin: 0;
+}

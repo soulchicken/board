@@ -1,8 +1,12 @@
 import React from 'react'
+import HomeBtn from '../components/button/HomeBtn'
 
 const NotFoundPage = () => {
   return (
-    <div>NotFoundPage</div>
+    <>
+      <div>NotFoundPage</div>
+      <HomeBtn />
+    </>
   )
 }
 

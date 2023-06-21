@@ -3,6 +3,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // react-router-dom의 Link 컴포넌트 import
 import styles from './PostList.module.css'; // CSS 모듈 가져오기
+import PostTitle from './PostTitle';
 
 const PostList = ({ posts }) => {
   const navigate = useNavigate();
@@ -10,13 +11,7 @@ const PostList = ({ posts }) => {
     <div className={styles.postList}> {/* CSS 모듈 클래스명 적용 */}
       <h2>게시판 전체보기</h2>
       <ul>
-        {posts.map((post) => (
-          <li key={post.id} onClick={() => {
-            navigate(`/posts/${post.id}`)
-            }}>
-              <h3>{post.title}</h3>
-          </li>
-        ))}
+        {posts.map((post) => <PostTitle post={post} navigate={navigate}/>)}
       </ul>
     </div>
   );
