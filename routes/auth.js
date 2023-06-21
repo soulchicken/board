@@ -66,4 +66,14 @@ router.post('/logout', function (req, res) {
     }
 });
 
+router.get('/authcheck', (req, res) => {      
+    const sendData = { isLogin: "" };
+    if (req.session.isLogin) {
+        sendData.isLogin = "True"
+    } else {
+        sendData.isLogin = "False"
+    }
+    res.send(sendData);
+})
+
 module.exports = router;
