@@ -4,6 +4,7 @@ import axios from 'axios';
 import PostList from '../components/board/PostList';
 
 const MainPage = () => {
+  const [isLogin, setIsLogin] = useState(false);
   const [posts, setPosts] = useState([
     {
       id: 1,
@@ -34,6 +35,7 @@ const MainPage = () => {
 
   useEffect(() => {
     fetchPosts();
+    authCheck();
   }, []);
 
   const fetchPosts = async () => {
@@ -45,13 +47,30 @@ const MainPage = () => {
     }
   };
 
+  const authCheck = async () => {
+    try {
+      const response = await axios.get('/api/users/authcheck');
+      setIsLogin(response.data.isLogin === "True");
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
 
   return (
     <div>
       <h1>Welcome to Board</h1>
-      <Link to="/signup">회원가입</Link>
-      <Link to="/login">로그인</Link>
-      <Link to="/posts/new">글쓰기</Link>
+      {
+        isLogin
+        ? <>
+            <Link to="/posts/new">글쓰기</Link>
+            <button>로그아웃버튼(예정)</button>
+          </>
+        : <>
+            <Link to="/signup">회원가입</Link>
+            <Link to="/login">로그인</Link>
+          </>
+      }
       <PostList posts={posts}/>
     </div>
   );
