@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import NotFoundPage from './pages/NotFoundPage';
 import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         {/* 다른 경로에 대한 라우트 설정 */}
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} /> 
+        <Route path="/signup" element={<SignupPage />} /> 
         <Route path="/*" element={<NotFoundPage />} />
       </Routes>
   </Router>
