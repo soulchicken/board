@@ -14,7 +14,7 @@ const PostDeleteBtn = ({ postId }) => {
             navigate('/');
         }
     } catch (error) {
-        alert('게시글 작성 실패!');
+        alert('게시글 삭제 실패!');
     }
   };
 
