@@ -32,6 +32,7 @@ const NewPostPage = () => {
 
   return (
     <div className={styles.container}>
+      <HomeBtn />
       <h2 className={styles.title}>게시글 작성</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
