@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 const authRouter = require('./routes/auth');
+const sessionOption = require('./lib/sessionOption');
 
 sequelize.sync({ force: false })
   .then(() => {
@@ -23,6 +24,17 @@ sequelize.sync({ force: false })
   .catch((err) => {
     console.error(err);
   });
+
+const MySQLStore = require('express-mysql-session')(session);
+const sessionStore = new MySQLStore(sessionOption);
+app.use(session({  
+  key: 'session_cookie_name',
+  secret: process.env.COOKIE_SECRET,
+  store: sessionStore,
+  resave: false,
+  saveUninitialized: false
+}))
+
 
 app.use(express.static(path.join(__dirname, '/build')));
 app.use('/api/users', authRouter);
