@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import PostList from '../components/board/PostList';
 import LogoutButton from '../components/button/LogoutBtn';
+import SignupButton from '../components/button/SignupBtn';
+import LoginButton from '../components/button/LoginBtn';
 
 const MainPage = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -68,8 +70,8 @@ const MainPage = () => {
             <LogoutButton setIsLogin={setIsLogin}/>
           </>
         : <>
-            <Link to="/signup">회원가입</Link>
-            <Link to="/login">로그인</Link>
+            <SignupButton />
+            <LoginButton />
           </>
       }
       <PostList posts={posts}/>
