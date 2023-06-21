@@ -1,0 +1,30 @@
+/* PostList.module.css */
+
+.postList {
+    padding: 20px;
+  }
+  
+  .postList h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .postList ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .postList li {
+    margin-bottom: 20px;
+  }
+  
+  .postList li h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .postLink {
+    text-decoration: none;
+    color: #333;
+  }
+  
