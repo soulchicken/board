@@ -28,6 +28,18 @@ router.post('/', (req, res) => {
         });
 });
 
+// 게시글 전체 읽기 (먼 미래의 페이지네이션을 지원할 예정)
+router.get('/', (req, res) => {
+    Post.findAll()
+      .then((posts) => {
+        res.json(posts);
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+      });
+  });
+
 // 게시글 삭제
 router.delete('/:id', async (req, res) => {
     const { id } = req.params;
