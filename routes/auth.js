@@ -53,4 +53,17 @@ router.post('/login', async (req, res) => {
     })
 });
 
+router.post('/logout', function (req, res) {
+    const sendData = { isLogin: "" };
+    try {
+        req.session.destroy()
+        sendData.isLogin = "False"
+        res.send(sendData);
+    } catch (error) {
+        console.error(error);
+        sendData.isLogin = "Unauthorized?"
+        res.status(401).send(sendData);
+    }
+});
+
 module.exports = router;
