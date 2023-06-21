@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import PostList from '../components/board/PostList';
+import LogoutButton from '../components/button/LogoutBtn';
 
 const MainPage = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -64,7 +65,7 @@ const MainPage = () => {
         isLogin
         ? <>
             <Link to="/posts/new">글쓰기</Link>
-            <button>로그아웃버튼(예정)</button>
+            <LogoutButton setIsLogin={setIsLogin}/>
           </>
         : <>
             <Link to="/signup">회원가입</Link>
