@@ -1,0 +1,28 @@
+.postDetail {
+  margin: 20px;
+}
+  
+.postDetail h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.postDetail h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.postDetail .contentLabel {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.postDetail .contentText {
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 10px;
+  min-height: 300px;
+  white-space: pre-line;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
